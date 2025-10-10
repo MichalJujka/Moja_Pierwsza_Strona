@@ -41,16 +41,17 @@ body::before {
 /* Header & Nav */
 header {
   background-color: transparent;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   position: relative;
   z-index: 1;
 }
 
 nav a {
   color: #f5f5f5;
-  margin-right: 1.5rem;
+  margin-right: 2rem;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.25rem;
   transition: color 0.3s;
 }
 
@@ -61,21 +62,23 @@ nav a.active, nav a:hover {
 /* Main content */
 main {
   max-width: 1000px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+  margin: 8rem auto;
+  padding: 2rem;
   text-align: center;
   position: relative;
   z-index: 1;
+  background: rgba(0, 0, 0, 0.4); /* optional dark overlay behind content */
+  border-radius: 12px;
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
   color: #ff2d2d;
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -84,8 +87,8 @@ button {
   background-color: #ff2d2d;
   color: #fff;
   border: none;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
   cursor: pointer;
   border-radius: 8px;
   transition: background-color 0.3s, transform 0.2s;
