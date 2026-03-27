@@ -14,7 +14,6 @@ body {
   z-index: 1;
 }
 
-/* Full-screen video background */
 #bg-video {
   position: fixed;
   top: 0;
@@ -26,7 +25,6 @@ body {
   opacity: 0.5;
 }
 
-/* Dark overlay for readability */
 body::before {
   content: '';
   position: fixed;
@@ -38,7 +36,6 @@ body::before {
   z-index: -1;
 }
 
-/* Header & Nav */
 header {
   background-color: transparent;
   padding: 1.5rem 2rem;
@@ -59,7 +56,6 @@ nav a.active, nav a:hover {
   color: #ff2d2d;
 }
 
-/* Main content */
 main {
   max-width: 1000px;
   margin: 8rem auto;
@@ -67,7 +63,7 @@ main {
   text-align: center;
   position: relative;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.4); /* optional dark overlay behind content */
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
 }
 
@@ -77,12 +73,6 @@ h1 {
   color: #ff2d2d;
 }
 
-p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-/* Buttons */
 button {
   background-color: #ff2d2d;
   color: #fff;
@@ -99,10 +89,9 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Art gallery */
 .art-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -126,51 +115,14 @@ button:hover {
   margin-bottom: 0.75rem;
 }
 
-.art-item p {
-  color: #ff2d2d;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-/* Footer */
 footer {
-  background-color: transparent;
   text-align: center;
-  padding: 1.5rem 2rem;
-  margin-top: 3rem;
+  padding: 1.5rem;
   border-top: 1px solid #333;
-  position: relative;
-  z-index: 1;
 }
 
 .social-links a {
   color: #ff2d2d;
   text-decoration: none;
-  margin: 0 0.5rem;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: #fff;
-}
-
-/* Lists */
-ul {
-  list-style-type: none;
-  padding: 0;
-  font-size: 1.1rem;
-}
-
-li {
-  margin-bottom: 0.75rem;
-  color: #f5f5f5;
-}
-
-li a {
-  color: #ff2d2d;
-  text-decoration: none;
-}
-
-li a:hover {
-  color: #fff;
+  font-weight: bold;
 }

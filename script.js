@@ -1,4 +1,12 @@
 document.getElementById('clickMe').addEventListener('click', () => {
-  alert('Hello! You clicked the button.');
-});
+  const pages = [
+    'index.html',
+    'about.html',
+    'contact.html',
+    'art.html',
+    'edits.html'
+  ];
 
+  const randomIndex = Math.floor(Math.random() * pages.length);
+  window.location.href = pages[randomIndex];
+});
