@@ -1,12 +1,21 @@
-document.getElementById('clickMe').addEventListener('click', () => {
-  const pages = [
-    'index.html',
-    'about.html',
-    'contact.html',
-    'art.html',
-    'edits.html'
-  ];
+// =========================
+// SCRIPT.JS
+// =========================
 
-  const randomIndex = Math.floor(Math.random() * pages.length);
-  window.location.href = pages[randomIndex];
-});
+const button = document.getElementById("clickMe");
+
+if (button) {
+
+  button.addEventListener("click", () => {
+
+    button.textContent = "Thanks for Clicking!";
+
+    button.style.transform = "scale(1.08)";
+
+    setTimeout(() => {
+      button.style.transform = "scale(1)";
+    }, 200);
+
+  });
+
+}
