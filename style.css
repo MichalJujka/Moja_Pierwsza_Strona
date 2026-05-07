@@ -1,5 +1,5 @@
 /* =========================
-   RESET
+   RESET & BODY
 ========================= */
 * {
   margin: 0;
@@ -7,9 +7,6 @@
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
   font-family: Arial, sans-serif;
   background-color: #120f18;
@@ -21,7 +18,7 @@ body {
 }
 
 /* =========================
-   BACKGROUND VIDEO
+   BACKGROUNDS
 ========================= */
 #bg-video {
   position: fixed;
@@ -34,9 +31,6 @@ body {
   z-index: -2;
 }
 
-/* =========================
-   DARK OVERLAY
-========================= */
 body::before {
   content: "";
   position: fixed;
@@ -46,7 +40,7 @@ body::before {
 }
 
 /* =========================
-   HEADER / NAVIGATION
+   NAVIGATION
 ========================= */
 header {
   padding: 1.5rem 2rem;
@@ -65,13 +59,9 @@ nav a {
   color: #e6e0f2;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.15rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  transition:
-    color 0.3s ease,
-    background 0.3s ease,
-    transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 nav a:hover,
@@ -82,96 +72,29 @@ nav a.active {
 }
 
 /* =========================
-   MAIN CONTENT
+   MAIN CONTENT & TITLES
 ========================= */
 main {
-  width: min(1000px, 92%);
+  width: min(1200px, 92%); /* Widened slightly for the gallery */
   margin: 5rem auto;
   padding: 2.5rem;
   text-align: center;
-
   background: rgba(20, 18, 28, 0.72);
   border: 1px solid #2a2233;
   border-radius: 18px;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 0 30px rgba(0, 0, 0, 0.3),
-    0 0 15px rgba(184, 108, 255, 0.08);
 }
 
-/* =========================
-   TITLES
-========================= */
 h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
   margin-bottom: 1.5rem;
-
   color: #b86cff;
-
-  text-shadow:
-    0 0 12px rgba(184, 108, 255, 0.35),
-    0 0 25px rgba(184, 108, 255, 0.15);
+  text-shadow: 0 0 12px rgba(184, 108, 255, 0.35);
 }
 
 /* =========================
-   PARAGRAPHS
-========================= */
-p {
-  font-size: 1.1rem;
-  color: #ddd6f7;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-button {
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-
-  color: white;
-  border: none;
-
-  padding: 1rem 2rem;
-  margin-top: 1.5rem;
-
-  font-size: 1rem;
-  font-weight: bold;
-
-  border-radius: 10px;
-  cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-button:hover {
-  background: linear-gradient(135deg, #ff2d2d, #ff4d4d);
-
-  transform: translateY(-3px) scale(1.03);
-
-  box-shadow:
-    0 0 20px rgba(255, 45, 45, 0.4),
-    0 0 35px rgba(255, 45, 45, 0.2);
-}
-
-/* =========================
-   LINKS
-========================= */
-a {
-  color: #ff5b5b;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #ffffff;
-}
-
-/* =========================
-   GALLERY
+   GALLERY GRID (The Fix)
 ========================= */
 .art-gallery {
   display: grid;
@@ -180,62 +103,37 @@ a:hover {
   margin-top: 2rem;
 }
 
-/* =========================
-   CARDS
-========================= */
 .art-item {
   background: rgba(14, 11, 20, 0.92);
-
   border: 1px solid #2a2233;
   border-radius: 16px;
-
   padding: 1rem;
-
   overflow: hidden;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 0; /* Reset figure margins */
 }
 
 .art-item:hover {
   transform: translateY(-6px);
-
   border-color: rgba(255, 45, 45, 0.35);
-
-  box-shadow:
-    0 0 18px rgba(184, 108, 255, 0.28),
-    0 0 14px rgba(255, 45, 45, 0.18);
+  box-shadow: 0 0 18px rgba(184, 108, 255, 0.28);
 }
 
 /* =========================
-   IMAGES
+   IMAGES (The Critical Fix)
 ========================= */
 .art-item img {
   width: 100%;
+  height: 350px;       /* Fixed height ensures all cards align */
+  object-fit: cover;   /* Crops image to fit without stretching */
   border-radius: 12px;
   display: block;
-  object-fit: cover;
 }
 
-/* =========================
-   CARD TEXT
-========================= */
-.art-item p {
+figcaption {
   margin-top: 1rem;
   color: #d8c7ff;
   font-weight: bold;
-}
-
-/* =========================
-   TIKTOK EMBEDS
-========================= */
-.tiktok-embed {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: unset !important;
-  margin: 0 auto;
 }
 
 /* =========================
@@ -245,14 +143,8 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   margin-top: 3rem;
-
   border-top: 1px solid #2a2233;
-
   color: #c7b6e6;
-}
-
-.social-links {
-  margin-top: 0.8rem;
 }
 
 .social-links a {
@@ -262,89 +154,14 @@ footer {
 }
 
 /* =========================
-   SCROLLBAR
-========================= */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #120f18;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #7c3aed;
-  border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ff2d2d;
-}
-
-/* =========================
-   MOBILE OPTIMIZATION
+   MOBILE RESPONSIVENESS
 ========================= */
 @media (max-width: 768px) {
-
-  header {
-    padding: 1rem;
-  }
-
-  nav {
-    gap: 0.5rem;
-  }
-
-  nav a {
-    font-size: 1rem;
-    padding: 0.45rem 0.8rem;
-  }
-
-  main {
-    margin: 3rem auto;
-    padding: 1.5rem;
-    width: 94%;
-  }
-
-  h1 {
-    font-size: 2.3rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  button {
-    width: 100%;
-    max-width: 260px;
-  }
-
   .art-gallery {
     grid-template-columns: 1fr;
   }
-
-}
-
-/* =========================
-   SMALL PHONES
-========================= */
-@media (max-width: 480px) {
-
-  h1 {
-    font-size: 2rem;
+  
+  .art-item img {
+    height: 300px; /* Shorter images for mobile screens */
   }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    width: 100%;
-    text-align: center;
-  }
-
-  main {
-    padding: 1.2rem;
-  }
-
 }
